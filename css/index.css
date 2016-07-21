@@ -1,22 +1,27 @@
 body {
   overflow-y: scroll;
 }
-.header-small-screen {
-  width: 100%;
-  height: 50px;
-  background: #fff;
-  margin: 0;
-  padding: 15px;
+
+/* --- toggle header -- */
+header {
   position: fixed;
+  width: 100vw;
   z-index: 1000;
+}
+.navbar {
+  margin-bottom: 0;
+  border: none;
+  background: #fff;
+}
+#navbar-toggle-button {
   display: none;
 }
 #nav-toggle {
   position: absolute;
+  padding: 20px;
 }
 #nav-toggle {
   cursor: pointer;
-  padding: 10px 35px 16px 0px;
 }
 #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
   cursor: pointer;
@@ -49,46 +54,46 @@ body {
 #nav-toggle.active span:after {
   transform: rotate(-45deg);
 }
-
-/* --- Left Menu --- */
-.header {
+#left-menu-navbar {
   width: 250px;
-  height: auto;
-  margin: 0;
-  padding: 0;
-  border-right: 1px solid #eee;
+  height: 100vh;
   overflow: auto;
-  float: left;
-  background: #fff;
+  margin-left: 0;
+}
+#left-menu > .container-fluid {
+  width: inherit;
+  padding: 0;
+  margin: 0;
+  height: auto;
+}
+#left-menu {
+  height: auto;
 }
 .header-inside {
+  border-right: 1px solid #eee;
   height: 100vh;
-  margin: 0;
-  padding: 0;
 }
 .profile-image {
   width: 100%;
-  height: 250px;
-}
-.profile-image p {
+  padding-top: 50px;
+  padding-bottom: 50px;
   text-align: center;
-  padding: 50px;
 }
-.profile-image p img {
+.profile-image img {
   width: 125px;
   height: 125px;
   border-radius: 100%;
 }
 .header-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.header-menu li {
   border-bottom: 1px solid #eee;
-  margin: 0;
-  padding: 0;
 }
-.header-menu p {
-  margin: 0;
-  padding: 0;
-}
-.header-menu p a {
+.header-menu li a {
   text-decoration: none;
   color: inherit;
   display: block;
@@ -99,35 +104,51 @@ body {
   color: #888;
   font-size:  1.25em;
 }
-.header-menu p a:hover {
+.header-menu li a:hover {
   background: #f5f5f5;
 }
-.menuActive p a {
+.menuActive a {
   padding-right: 20px;
   border-right: 4px solid #4A90E2;
 }
+
+
+/* Basic section */
 .content {
-  width: calc(100% - 250px);
+  width: 100%;
   min-height: 100vh;
   height: auto;
-  margin: 0 !important;
-  pading: 0 !important;
-  float: right;
-  margin-left: 0;
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+  padding-left: 250px;
 }
-.content .row div{
-  padding: 0 !important;
+.content > .container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.content > .container > .row {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.content > .container > .row > div {
+  margin: 0;
+  padding: 0;
 }
 .top-image {
   background-image: url('../img/top_image.jpg');
   background-repeat: no-repeat;
   background-position: center;
+  background-color: #000;
   background-size: cover;
   color: #fff;
   margin: 0;
   padding: 0;
   text-align: center;
   font-family: 'Assistant', sans-serif;
+  width: 100%;
 }
 .top-image h1 {
   margin: 0;
@@ -135,44 +156,36 @@ body {
   font-size: 3em;
   letter-spacing: -2px;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+  padding-bottom: 20px;
 }
 .top-image h2 {
   font-size: 1.67em;
   line-height: 1.5;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+  margin: 0;
   padding-bottom: 20px;
 }
-
-/* xs-size */
-@media screen and (max-width: 544px) {
-  .header-small-screen {
-    display: block;
-  }
-  .header {
-    padding-top: 80px;
-    margin-left: -250px;
-  }
-  .content {
-    width: 100%;
-    position: fixed;
-    z-index: -1;
-    padding-top: 50px;
-  }
+/* Heading before main content starts */
+.main-content {
+  color: #888;
+  font-family: 'Assistant', sans-serif;
+  margin-bottom: 20px !important;
 }
-
-/* sm-size */
-@media screen and (min-width: 544px) and (max-width: 768px) {
-  .header-small-screen {
-    display: block;
-  }
-  .header {
-    padding-top: 80px;
-    margin-left: -250px;
-  }
-  .content {
-    width: 100%;
-    position: fixed;
-    z-index: -1;
-    padding-top: 50px;
-  }
+.main-content-heading h2 {
+  text-align: center;
+  display: block;
+  padding: 20px;
+  font-size: 2.5em;
+  letter-spacing: -1px;
+}
+.main-content-heading h2::after {
+  content: '';
+  width: 3em;
+  height: 1px;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1.5em;
+  background: #888;
+  position: absolute;
+  display: block;
 }
