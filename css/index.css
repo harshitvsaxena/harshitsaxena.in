@@ -54,11 +54,16 @@ header {
 #nav-toggle.active span:after {
   transform: rotate(-45deg);
 }
+
+/* --- Left Menu --- */
 #left-menu-navbar {
   width: 250px;
   height: 100vh;
   overflow: auto;
   margin-left: 0;
+  position: fixed;
+  z-index: 800;
+  background: #fff;
 }
 #left-menu > .container-fluid {
   width: inherit;
@@ -89,6 +94,7 @@ header {
   margin: 0;
   padding: 0;
   width: 100%;
+  background: #fff;
 }
 .header-menu li {
   border-bottom: 1px solid #eee;
@@ -111,7 +117,6 @@ header {
   padding-right: 20px;
   border-right: 4px solid #4A90E2;
 }
-
 
 /* Basic section */
 .content {
