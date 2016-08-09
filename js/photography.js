@@ -1,10 +1,25 @@
 $(document).ready(function() {
-  var numberOfImages = 21;
-  for(var i=1; i<=numberOfImages; i++) {
-    $("#imagesContainer").append(' \
-      <div class="col-md-3 col-sm-4 col-xs-6"> \
-        <img src="../img/photography/' + i + '.jpg" style="width: 100%; height: 250px;" /> \
-      </div> \
-    ');
-  }
+	if(screen.width < screen.height) {
+		//Mobile Screen
+		$("#imagesContainer").append(' \
+			<!-- 500pxWidget Mobile --> \
+			<iframe \
+				src="http://500pxwidget.com/in/?u=aGFyc2hpdHZzYXhlbmF8aW58MTUwfDJ8MTB8fG5vfDB8" \
+				allowTransparency="true" \
+				frameborder="0" \
+				scrolling="no" \
+				style="border:none; overflow:hidden; width:300px; height: 1500px;" > \
+			</iframe>');
+	} else {
+		//Desktop Screen
+		$("#imagesContainer").append(' \
+			<!-- 500pxWidget Web --> \
+			<iframe \
+				src="http://500pxwidget.com/in/?u=aGFyc2hpdHZzYXhlbmF8aW58MjUwfDN8MTB8fG5vfDB8" \
+				allowTransparency="true" \
+				frameborder="0" \
+				scrolling="no" \
+				style="border:none; overflow:hidden; width:750px; height: 2500px" > \
+			</iframe>');
+	}
 });
